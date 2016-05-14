@@ -1,0 +1,6 @@
+﻿Controller ends with Controller
+
+
+The controller output names (IActionResult)  need to match the view names 
+
+-- <a asp-controller="Home" asp-action="Index"> 

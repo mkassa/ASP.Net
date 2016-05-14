@@ -1,0 +1,27 @@
+﻿# Directories #
+###############
+[Bb]in/
+obj/
+Backup/
+_UpgradeReport_Files/
+node_modules/
+.vs/
+
+# Compiled source #
+###################
+*.com*.class
+*.dll
+*.pdb
+*.exe
+*.o
+*.so
+# Include dlls if they’re in the NuGet packages directory
+!/packages/*/lib/*.dll
+!/packages/*/lib/*/*.dll
+
+# Visual Studio files#
+######################
+*.suo
+*.vspx
+*.psess
+applicationhost.config

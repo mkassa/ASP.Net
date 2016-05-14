@@ -1,0 +1,2 @@
+﻿dnx ef migrations add 'MadamTaitu_restaurants2' -- to migrate
+dnx ef database update -- commits the changes 

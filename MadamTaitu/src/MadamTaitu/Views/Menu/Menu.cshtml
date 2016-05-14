@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "Menu";
+}
+
+@section Scripts{
+    <script src="~/lib/angular/angular.min.js"></script>
+    <script src="~/js/taitu-app.js"></script>
+    <script src="~/js/controllers/menuController.js"></script>    
+}
+
+<h2>@ViewData["Title"]</h2>
+<div class="row" ng-app="taitu-app">
+    <div class="col-md-12"  ng-controller="menuController as vm">
+      <table class="table table-responsive table-striped" >
+          <tr ng-repeat="menu in vm.menus">
+              <td class="col-md-2">
+                  <img ng-src="{{menu.image}}" />
+                </td>
+                <td class="col-md-10">
+                  <div>
+                      <h2>{{menu.name}}</h2>
+                  </div>
+                  <div>
+                      {{menu.description}}
+                  </div>
+                    <div>
+                        <h3>Price:{{menu.price}}</h3>
+                    </div>
+              </td>
+              
+          </tr>
+</table>        
+
+    </div>
+</div>
+
+

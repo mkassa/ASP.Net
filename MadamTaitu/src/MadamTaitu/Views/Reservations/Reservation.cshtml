@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Reservations";
+}
+
+@section Scripts{
+    <script src="~/js/controllers/reservationsController.js"></script>
+}
+
+<h2>@ViewData["Title"]</h2>
+<div class="row" ng-app="taitu-app">
+    <div class="col-md-12" ng-controller="reservationsController as vm">
+        <table class="table table-responsive table-striped">
+            <tr ng-repeat="reservation in vm.reservations" ng-include="vm.getTemplate(reservation)">
+                
+            </tr>
+        </table>
+        
+        <script type="text/ng-template" id="view">
+            <td class="col-md-12">
+                <div>
+                    <h2>{{reservation.name}}</h2>
+                </div>
+                <div>
+                    <h3>Number of people:{{reservation.numberOfPeople}}</h3>
+                </div>
+
+                <div>Reservation Date: {{reservation.reservationDate}}</div>
+                <div>
+                    <h3>Status:{{reservation.reservationStatus}}</h3>
+                </div>
+                <div><button ng-click="vm.edit(reservation)" class="btn btn-default">Edit</button><button ng-click="vm.Delete(reservation)" class="btn btn-default">Delete</button></div>
+            </td>
+        </script>
+        <script type="text/ng-template" id="edit">
+            <td class="col-md-12">
+                <div>
+                    <h3>Number of people:<input type="number" ng-model="vm.selectedReservation.numberOfPeople" /></h3>
+                </div>
+
+                <div>Reservation Date: <input type="number" ng-model="vm.selectedReservation.reservationDate" /></div>
+                <div>
+                    <h3>Status:{{vm.reservation.reservationStatus}}</h3>
+                </div>
+                <div><button ng-click="vm.save($index)" class="btn btn-success">Save</button><button ng-click="cancel" class="btn btn-danger">Cancel</button></div>
+            </td>
+        </script>
+
+    </div>
+</div>

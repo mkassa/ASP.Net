@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using MadamTaitu.Models;
 using MadamTaitu.Services;
 using Newtonsoft.Json.Serialization;
+using MadamTaitu.DAL;
 
 namespace MadamTaitu
 {

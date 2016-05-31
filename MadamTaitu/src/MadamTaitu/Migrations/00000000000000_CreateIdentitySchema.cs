@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Data.Entity.Metadata;
 using Microsoft.Data.Entity.Migrations;
+using MadamTaitu.DAL;
 
 namespace MadamTaitu.Migrations
 {

@@ -31,10 +31,13 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li><a asp-controller="Home" asp-action="About">About</a></li>
                         <li><a asp-controller="Menu" asp-action="Menu">Menu</a></li>
-                        <li><a asp-controller="Reservations" asp-action="Index">Reservations</a></li>
+                        <li><a asp-controller="Reservations" asp-action="Reservation">Reservations</a></li>
+                        <li><a asp-controller="Home" asp-action="About">About</a></li>
+                        <li><a asp-controller="Home" asp-action="Gallery">Galery</a></li>
+                        <li><a asp-controller="Reviews" asp-action="Reviews">Reviews</a></li>
                         <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+
                     </ul>
                     @await Html.PartialAsync("_LoginPartial")
                 </div>
@@ -52,6 +55,10 @@
             <script src="~/lib/jquery/dist/jquery.js"></script>
             <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
             <script src="~/js/site.js" asp-append-version="true"></script>
+            <script src="~/lib/angular/angular.js"></script>
+            <script src="~/lib/google-geo-location/js/geo.js"></script>
+
+            <script src="~/js/taitu-app.js"></script>
         </environment>
         <environment names="Staging,Production">
             <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"
@@ -63,6 +70,12 @@
                     asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
             </script>
             <script src="~/js/site.min.js" asp-append-version="true"></script>
+            <script src="~/lib/angular/angular.min.js"></script>
+            <script src="~/lib/google-geo-location/js/geo-min.js"></script>
+
+
+
+            <script src="~/js/taitu-app.js"></script>
         </environment>
 
         @RenderSection("scripts", required: false)

@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+<h2>@ViewData["Title"].</h2>
+<h3>@ViewData["Message"]</h3>
+
+<link rel="stylesheet" href="~/lib/blueimp-gallery/css/blueimp-gallery.css" />
+<link rel="stylesheet" href="~/lib/blueimp-bootstrap-image-gallery/css/bootstrap-image-gallery.min.css" />
+
+<!-- The container for the list of example images -->
+<div id="links">
+    <a href="https://farm8.static.flickr.com/7297/27118077622_1ef4d02486_b.jpg" title="Blue night biew" data-gallery=""><img src="https://farm8.static.flickr.com/7297/27118077622_1ef4d02486_s.jpg"></a>
+    <a href="https://farm8.static.flickr.com/7518/27187968726_60d7c4b88a_b.jpg" title="bei Hauptmannsgreut / Allgäu" data-gallery=""><img src="https://farm8.static.flickr.com/7518/27187968726_60d7c4b88a_s.jpg"></a>
+</div>
+<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+    <div class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body next"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left prev">
+                        <i class="glyphicon glyphicon-chevron-left"></i>
+                        Previous
+                    </button>
+                    <button type="button" class="btn btn-primary next">
+                        Next
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+<script type="text/javascript" src="~/lib/blueimp-bootstrap-image-gallery/js/bootstrap-image-gallery.js"></script>

@@ -6,6 +6,9 @@
     "jquery": "2.1.4",
     "jquery-validation": "1.14.0",
     "jquery-validation-unobtrusive": "3.2.4",
-    "angular": "~1.4.6"
+    "angular": "~1.4.10",
+    "google-geo-location": "~0.4.8",
+    "blueimp-bootstrap-image-gallery": "~3.4.2",
+    "blueimp-gallery": "*"
   }
 }

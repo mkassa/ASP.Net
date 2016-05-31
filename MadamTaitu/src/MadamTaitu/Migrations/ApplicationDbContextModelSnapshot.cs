@@ -4,6 +4,7 @@ using Microsoft.Data.Entity.Infrastructure;
 using Microsoft.Data.Entity.Metadata;
 using Microsoft.Data.Entity.Migrations;
 using MadamTaitu.Models;
+using MadamTaitu.DAL;
 
 namespace MadamTaitu.Migrations
 {
@@ -77,6 +78,8 @@ namespace MadamTaitu.Migrations
 
                     b.Property<string>("Name");
 
+                    b.Property<decimal>("Price");
+
                     b.HasKey("Id");
                 });
 
@@ -88,6 +91,44 @@ namespace MadamTaitu.Migrations
                     b.Property<int?>("MenuId");
 
                     b.Property<string>("Name");
+
+                    b.HasKey("Id");
+                });
+
+            modelBuilder.Entity("MadamTaitu.Models.Restaurant.Reservation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("EmailAddresss");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int>("NumberOfPeople");
+
+                    b.Property<string>("ReservationComment");
+
+                    b.Property<DateTime>("ReservationDate");
+
+                    b.Property<int>("ReservationStatus");
+
+                    b.Property<string>("TelephoneNumber");
+
+                    b.HasKey("Id");
+                });
+
+            modelBuilder.Entity("MadamTaitu.Models.Review", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("AddedDate");
+
+                    b.Property<int>("Rating");
+
+                    b.Property<string>("ReviewText");
+
+                    b.Property<string>("ReviewerName");
 
                     b.HasKey("Id");
                 });

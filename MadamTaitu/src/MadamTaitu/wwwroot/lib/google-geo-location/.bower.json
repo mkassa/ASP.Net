@@ -1,0 +1,32 @@
+{
+  "name": "google-geo-location",
+  "description": "Google Geo Location javascript Library",
+  "main": [
+    "js/geo-min.js"
+  ],
+  "homepage": "https://code.google.com/p/geo-location-javascript/",
+  "license": "MIT",
+  "keywords": [
+    "google",
+    "geo",
+    "location"
+  ],
+  "authors": [
+    "Google"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/amostajo/geo-location-javascript.git"
+  },
+  "private": false,
+  "version": "0.4.8",
+  "_release": "0.4.8",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.4.8",
+    "commit": "08bef363557f1dd9c997325591794a1d386be87e"
+  },
+  "_source": "https://github.com/amostajo/geo-location-javascript.git",
+  "_target": "~0.4.8",
+  "_originalSource": "google-geo-location"
+}

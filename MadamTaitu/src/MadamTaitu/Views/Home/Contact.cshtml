@@ -4,14 +4,59 @@
 <h2>@ViewData["Title"].</h2>
 <h3>@ViewData["Message"]</h3>
 
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+
+// Define the address we want to map.
+ var address = "78 Long street City Bowl Cape Town";
+
+// Create a new Geocoder
+var geocoder = new google.maps.Geocoder();
+
+// Locate the address using the Geocoder.
+geocoder.geocode( { "address": address }, function(results, status) {
+
+  // If the Geocoding was successful
+  if (status == google.maps.GeocoderStatus.OK) {
+
+    // Create a Google Map at the latitude/longitude returned by the Geocoder.
+    var myOptions = {
+      zoom: 16,
+      center: results[0].geometry.location,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map"), myOptions);
+
+    // Add a marker at the address.
+    var marker = new google.maps.Marker({
+      map: map,
+      position: results[0].geometry.location
+    });
+
+  } else {
+    try {
+      console.error("Geocode was not successful for the following reason: " + status);
+    } catch(e) {}
+  }
+});
+</script>
+
 <address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
+    Madam Taitu<br />
+    78, Long street, City Bowl, Cape Town<br />
+    
+</address>
+    <address>
+        <strong>Phone: </strong>021 426 6969
 </address>
 
 <address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    <strong>Email:</strong> <a href="mailto:Support@example.com">solomun@gmail.com</a><br />
 </address>
+<!-- Placeholder for the Google Map -->
+<div id="map" style="height: 512px;">
+    <noscript>
+        <!-- http://code.google.com/apis/maps/documentation/staticmaps/ -->
+        <img src="http://maps.google.com/maps/api/staticmap?center=1%20infinite%20loop%20cupertino%20ca%2095014&amp;zoom=16&amp;size=512x512&amp;maptype=roadmap&amp;sensor=false" />
+    </noscript>
+</div>

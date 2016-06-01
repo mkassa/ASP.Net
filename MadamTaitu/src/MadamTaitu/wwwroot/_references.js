@@ -1,5 +1,6 @@
 ﻿/// <autosync enabled="true" />
 /// <reference path="../gulpfile.js" />
+/// <reference path="js/components/rating.component.js" />
 /// <reference path="js/components/reviews.component.js" />
 /// <reference path="js/controllers/contactus.js" />
 /// <reference path="js/controllers/menuController.js" />

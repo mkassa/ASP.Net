@@ -26,8 +26,8 @@ namespace MadamTaitu.Controllers.Reviews
 
             var reviews =  new List<Review> {
                 new Review() { ReviewerName="Michael", ReviewText="Lovely atmospher, great food and service!", Rating=5}
-                ,new Review() { ReviewerName="Solomon", ReviewText="Fantastic place....", Rating=5}
-                ,new Review() { ReviewerName="Kifle", ReviewText="Delicious food!", Rating=5}
+                ,new Review() { ReviewerName="Solomon", ReviewText="Fantastic place....", Rating=3}
+                ,new Review() { ReviewerName="Kifle", ReviewText="Delicious food!", Rating=4}
             };
 
             return Json(reviews);

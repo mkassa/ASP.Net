@@ -9,27 +9,29 @@
 
      function controller ($http) {
         var vm = this;
-
-        vm.message = "Message from a controller";
       
         vm.reviews = [];
+        vm.newReview = { reviewerName: '', reviewText: '', rating: 0 };
+
+        vm.$onInit = function () {
+            $http.get("/api/reviews")
+                     .then(function (response) {
+                         angular.copy(response.data, vm.reviews);
+                     }
+                     , function () { })
+        };
+
+        vm.setRating = function (review, value) {
+            review.rating = value;
+        };
 
         vm.addReview = function () {
-            if (vm.newReview && vm.newRating) {
-                //ReviewerName="Michael", ReviewText="Lovely atmospher, great food and service!", Rating=5
-                vm.reviews.push({ reviewerName: "Michael", reviewText: vm.newReview, rating: vm.newRating })
-
+            if (vm.newReview) {
+                vm.reviews.push({ reviewerName: "Michael", reviewText: vm.newReview.reviewText, rating: vm.newReview.rating })
                 vm.newReview = '';
-                vm.newRating = '';
                 vm.isWrieRewviewActive = false;
             }
         };
-
-        $http.get("/api/reviews")
-                 .then(function (response) {
-                     angular.copy(response.data, vm.reviews);
-                 }
-                 , function () { });
 
         
     };

@@ -3,15 +3,15 @@
 <div>
     <a ng-click="isWrieRewviewActive = !isWrieRewviewActive">Write a review</a>
     <div ng-show="isWrieRewviewActive">
-        <form >
-            <div>>{{vm.reviews.length}}</div>
-            <input type="text" ng-model="vm.newRating" />
-            <input type="text"  ng-model="vm.newReview">
-            <button type="button" ng-click="vm.addReview()">Submit</button>
-        </form>
+        <div>
+            <rating value="vm.newReview.rating" max="5" set-rating="vm.setRating(vm.newReview, value)"></rating>
+        </div>
+        <div>
+            <input type="text" ng-model="vm.newReview.reviewText" />
+        </div>
+        <button type="button" ng-click="vm.addReview()">Submit</button>
     </div>
 </div>
-<div>{{vm.reviews.length}}</div>
 <table class="table table-responsive table-striped">
     <tr ng-repeat="review in vm.reviews">
         <td class="col-md-12">
@@ -19,13 +19,13 @@
                 <h2>{{review.reviewerName}}</h2>
             </div>
             <div>
-                <h3>Rating: {{review.rating}}</h3>
+                <rating value="review.rating" max="5" set-rating="vm.setRating(review, value)"></rating>
             </div>
 
             <div>Reservation Date: {{review.addedDate |date:'yyyy-MM-dd'}}</div>
 
             <div>Comment: {{review.reviewText}}</div>
-            
+
         </td>
     </tr>
 </table>

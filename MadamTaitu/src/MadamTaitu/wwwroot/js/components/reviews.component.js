@@ -4,14 +4,31 @@
     var module = angular.module("taitu-app");
 
     function fetchReviews($http) {
-        return $.get("/api/reviews").then(function (response) { return response.data;});
-    }
+        return $http.get("/api/reviews").then(function (response) { return response.data; });
+    };
+
+    function addReview($http, newReview, successFunction, errorFunction) {
+        return $http.post("/api/reviews/add", JSON.stringify(newReview))
+            .then(function (response) { successFunction(response.data) }, function () { errorFunction() });
+    };
+
+    function  getNewRevew() {
+        return {
+            reviewerName: ''
+            , email: ''
+            , comment: ''
+            , rating: 0
+        };
+    };
+
 
      function controller ($http) {
+
         var vm = this;
       
         vm.reviews = [];
-        vm.newReview = { reviewerName: '', reviewText: '', rating: 0 };
+        vm.newReview = getNewRevew();
+        vm.isWriteReviewActive = false;
 
         vm.$onInit = function () {
             $http.get("/api/reviews")
@@ -21,19 +38,32 @@
                      , function () { })
         };
 
+        vm.addReviewClicked = function () {
+            vm.isWriteReviewActive = true;
+        };
+
         vm.setRating = function (review, value) {
             review.rating = value;
         };
 
-        vm.addReview = function () {
-            if (vm.newReview) {
-                vm.reviews.push({ reviewerName: "Michael", reviewText: vm.newReview.reviewText, rating: vm.newReview.rating })
-                vm.newReview = '';
-                vm.isWrieRewviewActive = false;
-            }
+        vm.cancelReview = function (frmAddReview) {
+            vm.newReview = getNewRevew();
+            vm.isWriteReviewActive = false;
+            frmAddReview.$setPristine();
+            frmAddReview.$setUntouched();;
         };
 
+        function newReviewAdded(review) {
+            vm.reviews.unshift(review);
+        };
         
+        vm.addReview = function () {
+            if (vm.newReview) {
+                addReview($http, vm.newReview, newReviewAdded);
+                vm.newReview = getNewRevew();
+                vm.isWriteReviewActive = false;
+            }
+        };
     };
 
     module.component("reviews", {

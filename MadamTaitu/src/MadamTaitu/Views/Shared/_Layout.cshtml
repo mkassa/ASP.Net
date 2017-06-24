@@ -33,9 +33,9 @@
                 <ul class="nav navbar-nav">
                     <li><a asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-controller="Menu" asp-action="Menu">Menu</a></li>
-                    <li><a asp-controller="Reservations" asp-action="Reservation">Reservations</a></li>
+                    @*<li><a asp-controller="Reservations" asp-action="Reservation">Reservations</a></li>*@
                     <li><a asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-controller="Home" asp-action="Gallery">Gallery</a></li>
+                    <li><a asp-controller="Gallery" asp-action="Gallery">Gallery</a></li>
                     <li><a asp-controller="Reviews" asp-action="Reviews">Reviews</a></li>
                     <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
 
@@ -44,14 +44,54 @@
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2016 - MadamTaitu</p>
-        </footer>
+    <div id="wrap">
+        <div id="main" class="container-fluid body-content clear-top">
+            @RenderBody()
+         </div>
     </div>
 
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                   
+                    
+                            
+                            @*Physical address:
+                            <a href="https://www.google.com/maps/preview?ie=UTF-8&q=The+Pentagon&fb=1&gl=us&hq=1400+Defense+Pentagon+Washington,+DC+20301-1400&cid=12647181945379443503&ei=qmYfU4H8LoL2oATa0IHIBg&ved=0CKwBEPwSMAo&safe=on">
+                                78, Long street, City Bowl, Cape Town
+                            </a>
+
+                            <span class="glyphicon glyphicon-phone-alt"></span> 021 426 6969
+                            Email:<a href="mailto:Support@example.com">solomun@gmail.com</a>
+                            Trading hours: 12:00PM - 12:00AM
+                            Social: <a href="https://www.facebook.com/search/1377441469135423/local_search?surface=tyah"><i class="fa fa-facebook-square fa-size"> </i></a>*@
+                    <h5>Madam Taitou</h5>
+                    
+                    <ul>
+
+                        <li>
+                            Physical address:
+                            <a href="https://www.google.com/maps/preview?ie=UTF-8&q=The+Pentagon&fb=1&gl=us&hq=1400+Defense+Pentagon+Washington,+DC+20301-1400&cid=12647181945379443503&ei=qmYfU4H8LoL2oATa0IHIBg&ved=0CKwBEPwSMAo&safe=on">
+                                78, Long street, City Bowl, Cape Town
+                            </a>
+                        </li>
+                        <li><span class="glyphicon glyphicon-phone-alt"></span> 021 426 6969<br></li>
+                        <li>Email:<a href="mailto:Support@example.com">solomun@gmail.com</a></li>
+                        <li>Trading hours: 12:00PM - 12:00AM</li>
+
+                    </ul>
+                   
+
+                </div>
+                <div class="col-sm-8 col-sm-offset-4">
+                    Website developed by <a href="mailto:mkassa@gmail.com">MF Kassa</a>
+                </div>
+                <!-- /col-xs-7 -->
+            </div>
+        </div>
+    </footer>
+   
     <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
@@ -60,6 +100,11 @@
         <script src="~/lib/google-geo-location/js/geo.js"></script>
 
         <script src="~/js/taitu-app.js"></script>
+        <script type="text/javascript" src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+        <script type="text/javascript" src="~/lib/blueimp-bootstrap-image-gallery/js/bootstrap-image-gallery.js"></script>
+        <script type="text/javascript" src="~/lib/spin.js/spin.js"></script>
+        <script type="text/javascript" src="~/lib/angular-spinner/angular-spinner.js"></script>
+
     </environment>
     <environment names="Staging,Production">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"

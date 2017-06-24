@@ -13,6 +13,9 @@ using MadamTaitu.Models;
 using MadamTaitu.Services;
 using Newtonsoft.Json.Serialization;
 using MadamTaitu.DAL;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using Microsoft.AspNet.Authentication.Facebook;
 
 namespace MadamTaitu
 {
@@ -55,9 +58,14 @@ namespace MadamTaitu
                 .AddJsonOptions(opt => 
                 {
                     opt.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+                    opt.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
+                    opt.SerializerSettings.TypeNameHandling = TypeNameHandling.Auto;
+                    opt.SerializerSettings.DateTimeZoneHandling = Newtonsoft.Json.DateTimeZoneHandling.Local;
+                    opt.SerializerSettings.Converters.Add(new StringEnumConverter { CamelCaseText = false });
                 });
 
-            // Add application services.
+
+           // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
         }
@@ -96,6 +104,12 @@ namespace MadamTaitu
             app.UseStaticFiles();
 
             app.UseIdentity();
+
+            app.UseFacebookAuthentication(new FacebookOptions()
+            {
+                AppId = "1057127587714408",//Configuration["Authentication:Facebook:AppId"],
+                AppSecret = "d967171296cf4270c51bb4df902932a2"//Configuration["Authentication:Facebook:AppSecret"]
+            });
 
             // To configure external authentication please see http://go.microsoft.com/fwlink/?LinkID=532715
 

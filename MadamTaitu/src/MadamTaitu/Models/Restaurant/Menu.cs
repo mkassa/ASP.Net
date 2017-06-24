@@ -20,5 +20,6 @@ namespace MadamTaitu.Models.Restaurant
         public string Image { get; set; }
 
         public decimal Price { get; set; }
+        public int OrderId { get;  set; }
     }
 }

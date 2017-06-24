@@ -3,7 +3,6 @@ using Microsoft.Data.Entity;
 using Microsoft.Data.Entity.Infrastructure;
 using Microsoft.Data.Entity.Metadata;
 using Microsoft.Data.Entity.Migrations;
-using MadamTaitu.Models;
 using MadamTaitu.DAL;
 
 namespace MadamTaitu.Migrations
@@ -78,6 +77,8 @@ namespace MadamTaitu.Migrations
 
                     b.Property<string>("Name");
 
+                    b.Property<int>("OrderId");
+
                     b.Property<decimal>("Price");
 
                     b.HasKey("Id");
@@ -124,11 +125,13 @@ namespace MadamTaitu.Migrations
 
                     b.Property<DateTime>("AddedDate");
 
+                    b.Property<string>("Comment");
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("Name");
+
                     b.Property<int>("Rating");
-
-                    b.Property<string>("ReviewText");
-
-                    b.Property<string>("ReviewerName");
 
                     b.HasKey("Id");
                 });

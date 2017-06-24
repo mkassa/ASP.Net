@@ -9,6 +9,9 @@
     "angular": "~1.4.10",
     "google-geo-location": "~0.4.8",
     "blueimp-bootstrap-image-gallery": "~3.4.2",
-    "blueimp-gallery": "*"
+    "blueimp-gallery": "*",
+    "wow": "~1.1.2",
+    "stickUp": "~0.5.7",
+    "angular-spinner": "*"
   }
 }

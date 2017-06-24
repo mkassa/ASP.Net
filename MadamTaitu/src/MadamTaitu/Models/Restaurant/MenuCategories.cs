@@ -7,8 +7,8 @@ namespace MadamTaitu.Models.Restaurant
 {
     public enum MenuCategories
     {
-        Breakfast = 1,
-        MainMeal = 2,
+        MeatDishes = 1,
+        Vegiterian = 2,
         Desert = 3,
         Drinks = 4
     }

@@ -4,33 +4,37 @@
 }
 
 @section Scripts{
-    <script src="~/js/controllers/menuController.js"></script>    
+    <script src="~/js/controllers/menuController.js"></script>
+    <script src="~/js/components/spinner.component.js"></script>
 }
 
-<h2>@ViewData["Title"]</h2>
-<div class="row" ng-app="taitu-app">
-    <div class="col-md-12"  ng-controller="menuController as vm">
-      <table class="table table-responsive table-striped" >
-          <tr ng-repeat="menu in vm.menus">
-              <td class="col-md-2">
-                  <img ng-src="{{menu.image}}" />
-                </td>
-                <td class="col-md-10">
-                  <div>
-                      <h2>{{menu.name}}</h2>
-                  </div>
-                  <div>
-                      {{menu.description}}
-                  </div>
-                    <div>
-                        <h3>Price:{{menu.price}}</h3>
-                    </div>
-              </td>
-              
-          </tr>
-</table>        
+<div id="menu" class="content" ng-app="taitu-app">
+    <div class="container">
 
+        <div class="col-sm-12 text-center wrap_title">
+            <h2>Menu</h2>
+        </div>
+
+        <div ng-controller="menuController as vm">
+            <span us-spinner="{radius:30, width:8, length: 16}" spinner-on="vm.isLoadingMenu"></span>
+            <div ng-show="!vm.isLoadingMenu">
+                <div ng-repeat="(key, menuType) in vm.menuGroupsByType" ng-cloak>
+                    <h3>{{key}}</h3>
+                    <br />
+                    <br />
+                    <div class="row" ng-repeat="groupMenus in menuType">
+                        <div ng-repeat="menu in groupMenus" class="col-sm-4 wow fadeInDown text-center" >
+                            <img class="img-rounded" ng-src="{{menu.image}}" alt="Generic placeholder image">
+                            <h4>{{menu.name}}</h4>
+                            <p>{{menu.description}}</p>
+                            <p>{{menu.price}}</p>
+                        </div>
+                    </div>
+                </div>
+            </ div>
+        </div>*
     </div>
 </div>
+   </div>
 
 

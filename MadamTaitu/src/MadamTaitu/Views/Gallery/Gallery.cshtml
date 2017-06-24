@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+
+<link rel="stylesheet" href="~/lib/blueimp-gallery/css/blueimp-gallery.css" />
+<link rel="stylesheet" href="~/lib/blueimp-bootstrap-image-gallery/css/bootstrap-image-gallery.min.css" />
+
+@section Scripts{
+    <script src="~/js/controllers/galleryController.js"></script>
+}
+
+<div ng-app="taitu-app">
+    <div ng-controller="galleryController as vm">
+        <h2>Gallery</h2>
+        <div ng-repeat-start="gallery in vm.galleries">
+            <a href="~/{gallery.image}" data-gallery=""><img style="width:150px;height:150px" src="~/{gallery.image}"></a>
+        </div>
+        <div ng-repeat-end=""/>
+    </div>
+</div>
+
+<!-- The container for the list of example images -->
+<div class="container" id="links">
+    <h2>Gallery</h2>
+    <a href="~/images/bb6d7b_03d700c6440b464c89eb689cc67437de.jpg" title="Blue night biew" data-gallery=""><img style="width:150px;height:150px" src="~/images/bb6d7b_03d700c6440b464c89eb689cc67437de.jpg"></a>
+    <a href="~/images/bb6d7b_12ef1934cb6641c08e1d76fc63fe2912.jpg" title="bei Hauptmannsgreut / Allgäu" data-gallery=""><img style="width:150px;height:150px" src="~/images/bb6d7b_12ef1934cb6641c08e1d76fc63fe2912.jpg"></a>
+    <a href="~/images/bb6d7b_2939671ea5da4ef0bb0a0e2dda8ce1c5.jpg" title="bei Hauptmannsgreut / Allgäu" data-gallery=""><img style="width:150px;height:150px" src="~/images/bb6d7b_2939671ea5da4ef0bb0a0e2dda8ce1c5.jpg"></a>
+    <a href="~/images/bb6d7b_294e928022494803a386ab8f81781aed.jpg" title="Blue night biew" data-gallery=""><img style="width:150px;height:150px" src="~/images/bb6d7b_294e928022494803a386ab8f81781aed.jpg"></a>
+    <a href="~/images/bb6d7b_298ab9f93b67420d8006821661170de2.jpg" title="bei Hauptmannsgreut / Allgäu" data-gallery=""><img style="width:150px;height:150px" src="~/images/bb6d7b_12ef1934cb6641c08e1d76fc63fe2912.jpg"></a>
+    <a href="~/images/bb6d7b_2b4c0543b526494bbfea4c76ed6fdf96.jpg" title="bei Hauptmannsgreut / Allgäu" data-gallery=""><img style="width:150px;height:150px" src="~/images/bb6d7b_2939671ea5da4ef0bb0a0e2dda8ce1c5.jpg"></a>
+    <a href="~/images/bb6d7b_03d700c6440b464c89eb689cc67437degalleries.jpg" title="Blue night biew" data-gallery=""><img style="width:150px;height:150px" src="~/images/bb6d7b_03d700c6440b464c89eb689cc67437de.jpg"></a>
+    <a href="~/images/bb6d7b_12ef1934cb6641c08e1d76fc63fe2912.jpg" title="bei Hauptmannsgreut / Allgäu" data-gallery=""><img style="width:150px;height:150px" src="~/images/bb6d7b_12ef1934cb6641c08e1d76fc63fe2912.jpg"></a>
+    <a href="~/images/bb6d7b_2939671ea5da4ef0bb0a0e2dda8ce1c5.jpg" title="bei Hauptmannsgreut / Allgäu" data-gallery=""><img style="width:150px;height:150px" src="~/images/bb6d7b_2939671ea5da4ef0bb0a0e2dda8ce1c5.jpg"></a>
+    <a href="~/images/bb6d7b_03d700c6440b464c89eb689cc67437de.jpg" title="Blue night biew" data-gallery=""><img style="width:150px;height:150px" src="~/images/bb6d7b_03d700c6440b464c89eb689cc67437de.jpg"></a>
+    <a href="~/images/bb6d7b_12ef1934cb6641c08e1d76fc63fe2912.jpg" title="bei Hauptmannsgreut / Allgäu" data-gallery=""><img style="width:150px;height:150px" src="~/images/bb6d7b_12ef1934cb6641c08e1d76fc63fe2912.jpg"></a>
+    <a href="~/images/bb6d7b_2939671ea5da4ef0bb0a0e2dda8ce1c5.jpg" title="bei Hauptmannsgreut / Allgäu" data-gallery=""><img style="width:150px;height:150px" src="~/images/bb6d7b_2939671ea5da4ef0bb0a0e2dda8ce1c5.jpg"></a>
+    <a href="~/images/bb6d7b_03d700c6440b464c89eb689cc67437de.jpg" title="Blue night biew" data-gallery=""><img style="width:150px;height:150px" src="~/images/bb6d7b_03d700c6440b464c89eb689cc67437de.jpg"></a>
+    <a href="~/images/bb6d7b_12ef1934cb6641c08e1d76fc63fe2912.jpg" title="bei Hauptmannsgreut / Allgäu" data-gallery=""><img style="width:150px;height:150px" src="~/images/bb6d7b_12ef1934cb6641c08e1d76fc63fe2912.jpg"></a>
+    <a href="~/images/bb6d7b_2939671ea5da4ef0bb0a0e2dda8ce1c5.jpg" title="bei Hauptmannsgreut / Allgäu" data-gallery=""><img style="width:150px;height:150px" src="~/images/bb6d7b_2939671ea5da4ef0bb0a0e2dda8ce1c5.jpg"></a>
+    <a href="~/images/bb6d7b_03d700c6440b464c89eb689cc67437de.jpg" title="Blue night biew" data-gallery=""><img style="width:150px;height:150px" src="~/images/bb6d7b_03d700c6440b464c89eb689cc67437de.jpg"></a>
+    <a href="~/images/bb6d7b_12ef1934cb6641c08e1d76fc63fe2912.jpg" title="bei Hauptmannsgreut / Allgäu" data-gallery=""><img style="width:150px;height:150px" src="~/images/bb6d7b_12ef1934cb6641c08e1d76fc63fe2912.jpg"></a>
+    <a href="~/images/bb6d7b_2939671ea5da4ef0bb0a0e2dda8ce1c5.jpg" title="bei Hauptmannsgreut / Allgäu" data-gallery=""><img style="width:150px;height:150px" src="~/images/bb6d7b_2939671ea5da4ef0bb0a0e2dda8ce1c5.jpg"></a>
+    <a href="~/images/bb6d7b_03d700c6440b464c89eb689cc67437de.jpg" title="Blue night biew" data-gallery=""><img style="width:150px;height:150px" src="~/images/bb6d7b_03d700c6440b464c89eb689cc67437de.jpg"></a>
+    <a href="~/images/bb6d7b_12ef1934cb6641c08e1d76fc63fe2912.jpg" title="bei Hauptmannsgreut / Allgäu" data-gallery=""><img style="width:150px;height:150px" src="~/images/bb6d7b_12ef1934cb6641c08e1d76fc63fe2912.jpg"></a>
+    <a href="~/images/bb6d7b_2939671ea5da4ef0bb0a0e2dda8ce1c5.jpg" title="bei Hauptmannsgreut / Allgäu" data-gallery=""><img style="width:150px;height:150px" src="~/images/bb6d7b_2939671ea5da4ef0bb0a0e2dda8ce1c5.jpg"></a>
+    <a href="~/images/bb6d7b_03d700c6440b464c89eb689cc67437de.jpg" title="Blue night biew" data-gallery=""><img style="width:150px;height:150px" src="~/images/bb6d7b_03d700c6440b464c89eb689cc67437de.jpg"></a>
+    <a href="~/images/bb6d7b_12ef1934cb6641c08e1d76fc63fe2912.jpg" title="bei Hauptmannsgreut / Allgäu" data-gallery=""><img style="width:150px;height:150px" src="~/images/bb6d7b_12ef1934cb6641c08e1d76fc63fe2912.jpg"></a>
+    <a href="~/images/bb6d7b_2939671ea5da4ef0bb0a0e2dda8ce1c5.jpg" title="bei Hauptmannsgreut / Allgäu" data-gallery=""><img style="width:150px;height:150px" src="~/images/bb6d7b_2939671ea5da4ef0bb0a0e2dda8ce1c5.jpg"></a>
+</div>
+<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+    <div class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body next"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left prev">
+                        <i class="glyphicon glyphicon-chevron-left"></i>
+                        Previous
+                    </button>
+                    <button type="button" class="btn btn-primary next">
+                        Next
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

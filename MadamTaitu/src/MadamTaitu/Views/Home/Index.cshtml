@@ -2,6 +2,7 @@
     ViewData["Title"] = "Home Page";
 }
 
+
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -10,8 +11,9 @@
         <li data-target="#myCarousel" data-slide-to="3"></li>
     </ol>
     <div class="carousel-inner" role="listbox">
+       
         <div class="item active">
-            <img src="~/images/banners/madam_taitu_banner_1.jpg" alt="ASP.NET" class="img-responsive" />
+            <img src="~/images/banners/madam_taitou_banner_1.jpg" alt="ASP.NET" class="img-responsive" />
             <div class="carousel-caption">
                 <p>
                     The best ethiopian restaruant in cape town :).
@@ -19,7 +21,7 @@
             </div>
         </div>
         <div class="item">
-            <img src="~/images/banners/madam_taitu_banner_2.jpg" alt="Visual Studio" class="img-responsive" />
+            <img src="~/images/banners/madam_taitou_banner_2.jpg" alt="Visual Studio" class="img-responsive" />
             <div class="carousel-caption">
                 <p>
                     Come experience our mouth watering food :).
@@ -27,18 +29,18 @@
             </div>
         </div>
         <div class="item">
-            <img src="~/images/banners/madam_taitu_banner_3.jpg" alt="Package Management" class="img-responsive" />
+            <img src="~/images/banners/madam_taitou_banner_1.jpg" alt="Package Management" class="img-responsive" />
             <div class="carousel-caption">
                 <p>
-                    Come and enjoy the different art galery and buy if you feel like 
+                    Come and enjoy the different art galery and buy if you feel like
                 </p>
             </div>
         </div>
         <div class="item">
-            <img src="~/images/banners/madam_taitu_banner_4.jpg" alt="Microsoft Azure" class="img-responsive" />
+            <img src="~/images/banners/madam_taitou_banner_2.jpg" alt="Microsoft Azure" class="img-responsive" />
             <div class="carousel-caption">
                 <p>
-                    Feel the hand roasted coffee 
+                    Feel the hand roasted coffee
                 </p>
             </div>
         </div>
@@ -52,24 +54,41 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
+ 
+<div id="whatis" class="content-section-b" style="border-top: 0">
+    <div class="container">
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Authentic Ethiopian cousin</h2>
-        <ul>
-            <li>Experience our delicious authentic ethiopian dish which serves both vegiterians and meat lovers.</li>
-        </ul>
-    </div>
-    <div class="col-md-4">
-        <h2>Imersed in various arts and crafts</h2>
-        <ul>
-            <li>Get capitivated with different unique art collection while enjoying the couzines of our different sitting arrangements</a></li>
-        </ul>
-    </div>
-    <div class="col-md-4">
-        <h2>Enjoy hand roasted coffee</h2>
-        <ul>
-            <li>Come and experience our hand roasted original ethiopian coffee</li>
-        </ul>
+        <div class="col-md-6 col-md-offset-3 text-center wrap_title">
+            <h2>Wellcome to Madam Taitu</h2>
+            <p class="lead" style="margin-top:0">Restaurant and Art</p>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-4 wow fadeInDown text-center">
+                @*<img class="rotate" src="/images/menus/beyeayinety.jpg" alt="Generic placeholder image">*@
+                <h2>Authentic Ethiopian cousine </h2>
+                <p class="lead">Enjoy our delicious Ethiopian dishes with variety of options for vegiterians and non vegiterians.</p>
+
+                <!--<p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p>-->
+            </div><!-- /.col-lg-4 -->
+
+            <div class="col-sm-4 wow fadeInDown text-center">
+                @*<img class="rotate" src="/images/menus/beyeayinety.jpg" alt="Generic placeholder image">*@
+                <h2>Fresh hand roasted coffee</h2>
+                <p class="lead">Our coffee made is served in Ethiopian way, where the coffee is hand roasted and brewed in a special clay pot.</p>
+                <!--<p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p>-->
+            </div>
+            <!-- /.col-lg-4 -->
+
+            <div class="col-sm-4 wow fadeInDown text-center">
+                @*<img class="rotate" src="/images/menus/beyeayinety.jpg" alt="Generic placeholder image">*@
+                <h2>Various arts gallery</h2>
+                <p class="lead">Get capitivated with different unique art collection while enjoying the couzines of </p>
+                <!--<p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p>-->
+            </div><!-- /.col-lg-4 -->
+
+        </div><!-- /.row -->
+
     </div>
 </div>
